@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Pomoberry.Core\Pomoberry.Core.csproj" />
+  </ItemGroup>
+
 </Project>
