@@ -29,6 +29,10 @@ namespace Pomoberry.Core
     // Core Pomodoro timer logic
     public class PomodoroSessionManager : IDisposable
     {
+        /// <summary>
+        /// **This is the SessionManager class that handles the core logic of the Pomodoro timer.**
+        /// </summary>
+
         private readonly System.Timers.Timer _timer; // System.Timers.Timer runs in a thread pool thread
 
         // User-configurable settings
@@ -65,6 +69,22 @@ namespace Pomoberry.Core
 
             // Initialize first session
             Reset();
+        }
+
+        // This is a new seperate constructor specifically for allowing unit tests to use short TimeSpans
+        internal PomodoroSessionManager(TimeSpan workTime, TimeSpan breakTime, int totalSessions)
+        {
+            WorkMinutes = (int)workTime.TotalMinutes; // Still set these for compatibility
+            BreakMinutes = (int)breakTime.TotalMinutes;
+            TotalSessions = Math.Max(1, totalSessions);
+
+            _timer = new System.Timers.Timer(100) { AutoReset = true }; // Use a faster tick for tests
+            _timer.Elapsed += Timer_Elapsed;
+
+            Reset(); // Call your existing Reset method
+
+            // Override initial TimeLeft with the precise TimeSpan for testing
+            TimeLeft = workTime;
         }
 
         // Start timer

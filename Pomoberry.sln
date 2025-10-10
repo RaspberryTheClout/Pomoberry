@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomoberry.UI", "PomodoroTimer.UI\Pomoberry.UI.csproj", "{26CCFF08-B364-4FD2-85A2-EBE9797ABBDC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomoberry.Core", "Pomoberry.Core\Pomoberry.Core.csproj", "{631CA1FC-4BF0-43E3-A316-F15210076F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomoberry.UI", "Pomoberry.UI\Pomoberry.UI.csproj", "{75005DA4-3A0C-E175-8309-7E8367D1FCB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomoberry.Core.Tests", "Pomoberry.Core.Tests\Pomoberry.Core.Tests.csproj", "{1D9869C8-9164-4C7A-9AA7-EE2C0FDE07FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +21,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26CCFF08-B364-4FD2-85A2-EBE9797ABBDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26CCFF08-B364-4FD2-85A2-EBE9797ABBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26CCFF08-B364-4FD2-85A2-EBE9797ABBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26CCFF08-B364-4FD2-85A2-EBE9797ABBDC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{631CA1FC-4BF0-43E3-A316-F15210076F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{631CA1FC-4BF0-43E3-A316-F15210076F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{631CA1FC-4BF0-43E3-A316-F15210076F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{631CA1FC-4BF0-43E3-A316-F15210076F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75005DA4-3A0C-E175-8309-7E8367D1FCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75005DA4-3A0C-E175-8309-7E8367D1FCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75005DA4-3A0C-E175-8309-7E8367D1FCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75005DA4-3A0C-E175-8309-7E8367D1FCB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9869C8-9164-4C7A-9AA7-EE2C0FDE07FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9869C8-9164-4C7A-9AA7-EE2C0FDE07FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9869C8-9164-4C7A-9AA7-EE2C0FDE07FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9869C8-9164-4C7A-9AA7-EE2C0FDE07FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
