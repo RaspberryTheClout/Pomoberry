@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Pomoberry.Core\Pomoberry.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserData\" />
+  </ItemGroup>
+
 </Project>

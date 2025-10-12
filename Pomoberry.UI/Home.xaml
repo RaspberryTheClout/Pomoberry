@@ -1,0 +1,27 @@
+﻿<Window x:Class="Pomoberry.UI.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pomoberry.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home">
+
+    <Grid>
+        <Button x:Name="NewTimerButton" Content="+" HorizontalAlignment="Left" Height="30" Margin="73,80,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="-0.081,1.333"/>
+        <ListBox x:Name="TimerListBox" HorizontalAlignment="Center" Height="201" Margin="0,132,0,0" VerticalAlignment="Top" Width="705" ItemsSource="{Binding Timers}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding WorkMinutes}" Margin="0,0,10,0"/>
+                        <TextBlock Text="{Binding BreakMinutes}" Margin="0,0,10,0"/>
+                        <TextBlock Text="{Binding TotalSessions}" Margin="0,0,10,0"/>
+                        <Button Content="StartTimerButton" Command="{Binding StartCommand}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
