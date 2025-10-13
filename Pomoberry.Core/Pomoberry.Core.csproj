@@ -9,5 +9,9 @@
   <ItemGroup>
     <InternalsVisibleTo Include="Pomoberry.Core.Tests" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="9.0.9" />
+  </ItemGroup>
 
 </Project>

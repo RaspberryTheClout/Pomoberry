@@ -11,5 +11,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Pomoberry.Core\Pomoberry.Core.csproj" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="..\Assets\Sounds\lofi-loop.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
 </Project>
