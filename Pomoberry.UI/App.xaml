@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:PomodoroTimer.UI"
              StartupUri="Home.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/darkTheme.xaml"/>  <!-- Theme Directory-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>

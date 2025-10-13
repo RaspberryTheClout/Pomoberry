@@ -1,10 +1,5 @@
-﻿using Pomoberry.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using System.Text.Json.Serialization;
 
 namespace Pomoberry.UI.Models
 {
@@ -17,12 +12,21 @@ namespace Pomoberry.UI.Models
         public int BreakMinutes { get; set; }
         public int TotalSessions { get; set; }
 
+        [JsonIgnore]
         public ICommand? StartCommand { get; set; }        // Interface used for calling StartSession
         
         public void StartSession()   // open a new timer window with given parameters
         {
             TimerWindow timerwindow = new TimerWindow(WorkMinutes, BreakMinutes, TotalSessions);
             timerwindow.Show();
+        }
+
+        // Constructor
+        public TimerModel(int workMinutes, int breakMinutes, int totalSessions)
+        {
+            WorkMinutes = workMinutes;
+            BreakMinutes = breakMinutes;
+            TotalSessions = totalSessions;
         }
     }
 }

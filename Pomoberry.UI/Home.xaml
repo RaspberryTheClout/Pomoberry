@@ -9,7 +9,7 @@
       Title="Home">
 
     <Grid>
-        <Button x:Name="NewTimerButton" Content="+" HorizontalAlignment="Left" Height="30" Margin="73,80,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="-0.081,1.333"/>
+        <Button x:Name="NewTimerButton" Click="NewTimerButton_Click" Content="+" HorizontalAlignment="Left" Height="30" Margin="73,80,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="-0.081,1.333"/>
         <ListBox x:Name="TimerListBox" HorizontalAlignment="Center" Height="201" Margin="0,132,0,0" VerticalAlignment="Top" Width="705" ItemsSource="{Binding Timers}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

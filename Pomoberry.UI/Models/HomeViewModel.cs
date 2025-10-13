@@ -52,8 +52,8 @@ namespace Pomoberry.UI.Models
         {
             LoadTimers();   // Load timers from storage
             // Example: Add a sample timer
-            Timers.Add(new TimerModel { WorkMinutes = 25, BreakMinutes = 5, TotalSessions = 4 });
-            Timers.Add(new TimerModel { WorkMinutes = 30, BreakMinutes = 7, TotalSessions = 3 });
+            Timers.Add(new TimerModel(25,5,4 ));
+            Timers.Add(new TimerModel(30,7,3));
 
             // Assign Relay Command that calls StartSession for each timer
             foreach (var timer in Timers) 

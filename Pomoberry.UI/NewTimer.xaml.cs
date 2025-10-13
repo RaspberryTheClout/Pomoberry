@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Pomoberry.UI
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for NewTimer.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class NewTimer : Window
     {
-        public Home()
+        public NewTimer()
         {
             InitializeComponent();
-            DataContext = new Models.HomeViewModel();
-        }
-
-        private void NewTimerButton_Click(object sender, RoutedEventArgs e)
-        {
-            NewTimer newTimer = new NewTimer();
-            newTimer.Show();
         }
     }
 }
