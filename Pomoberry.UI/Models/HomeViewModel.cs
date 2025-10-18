@@ -44,6 +44,20 @@ namespace Pomoberry.UI.Models
             File.WriteAllText(timersFile, json);
         }
 
+        public void AddTimer(int WorkMinutes, int BreakMinutes, int Sessions)          // to add a timer using new timer window
+        {
+            TimerModel timer = new TimerModel(WorkMinutes, BreakMinutes, Sessions);
+            Timers.Add(timer);
+            timer.StartCommand = new RelayCommand(_ => timer.StartSession());
+            timer.DeleteCommand = new RelayCommand(_ => DeleteTimer(timer));
+        }
+
+        public void DeleteTimer(TimerModel timer)          // to add a timer using new timer window
+        {
+            Timers.Remove(timer);
+            SaveTimers();   // write the change to the jason file
+        }
+
 
         public ObservableCollection<TimerModel> Timers { get; set; } = new();
 
@@ -59,6 +73,7 @@ namespace Pomoberry.UI.Models
             foreach (var timer in Timers) 
             {
                 timer.StartCommand = new RelayCommand(_ => timer.StartSession());  //lambda function
+                timer.DeleteCommand = new RelayCommand(_ => DeleteTimer(timer));  // Bind the delete timer method in this class to the delete timer interface in the timer model
             }
             //SaveTimers();
         }

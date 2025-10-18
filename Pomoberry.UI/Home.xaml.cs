@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pomoberry.UI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,12 @@ namespace Pomoberry.UI
     /// </summary>
     public partial class Home : Window
     {
+        private static Models.HomeViewModel TimerData;    //Non nullable???
         public Home()
         {
             InitializeComponent();
-            DataContext = new Models.HomeViewModel();
+            TimerData = new Models.HomeViewModel();
+            DataContext = TimerData;
         }
 
         private void NewTimerButton_Click(object sender, RoutedEventArgs e)
@@ -31,5 +34,14 @@ namespace Pomoberry.UI
             NewTimer newTimer = new NewTimer();
             newTimer.Show();
         }
+
+        public static void AddTimer(int WorkMinutes, int BreakMinutes, int Sessions)          // Access AddTimer method in TimerData
+        {
+            TimerData.AddTimer(WorkMinutes, BreakMinutes, Sessions);
+            TimerData.SaveTimers(); //Save Timers to File
+
+        }
+
+
     }
 }

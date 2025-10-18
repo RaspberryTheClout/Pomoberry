@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pomoberry.UI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,26 @@ namespace Pomoberry.UI
         public NewTimer()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int WorkMinutes = Convert.ToInt32(WorkMinutesTxtBox.Text);
+            int BreakMinutes = Convert.ToInt32(BreakMinutesTxtBox.Text);
+            int Sessions = Convert.ToInt32(SessionsTxtBox.Text);
+
+            Home.AddTimer(WorkMinutes, BreakMinutes, Sessions);  // call the add timer method in home
+            Close();
         }
     }
 }

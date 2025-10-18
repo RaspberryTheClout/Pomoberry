@@ -21,6 +21,10 @@ namespace Pomoberry.UI.Models
             timerwindow.Show();
         }
 
+        [JsonIgnore]
+        public ICommand? DeleteCommand { get; set; }        // Interface used for calling StartSession
+
+
         // Constructor
         public TimerModel(int workMinutes, int breakMinutes, int totalSessions)
         {

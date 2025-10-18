@@ -5,6 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pomoberry.UI"
         mc:Ignorable="d"
-        Title="NewTimer" Height="300" Width="600">
-    <Grid/>
+        ResizeMode="NoResize"
+        Title="NewTimer" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="WorkMinutesLabel" Content="Work Minutes" HorizontalAlignment="Left" Height="26" Margin="10,38,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="BreakMinutesLabel" Content="Break Minutes" HorizontalAlignment="Left" Height="26" Margin="10,108,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.497,-0.622"/>
+        <Label x:Name="SessionsLabel" Content="Sessions" HorizontalAlignment="Left" Height="26" Margin="10,178,0,0" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="WorkMinutesTxtBox" TextWrapping="Wrap" Text="25" Margin="136,30,40,220" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="BreakMinutesTxtBox" TextWrapping="Wrap" Text="5" Margin="136,100,40,150" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="SessionsTxtBox" TextWrapping="Wrap" Text="4" Margin="136,170,90,80" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="OKButton" Margin="30,228,181,16">
+            <Button Content="OK" Click="Button_Click"/>
+        </Button>
+        <Button x:Name="CancelButton" Margin="173,228,25,16" Click="CancelButton_Click">
+            <Button Content="Cancel"/>
+        </Button>
+    </Grid>
 </Window>

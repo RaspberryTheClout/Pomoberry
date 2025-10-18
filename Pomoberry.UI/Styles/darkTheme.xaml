@@ -12,9 +12,20 @@
 
     <!-- Style for ListBox -->
     <Style TargetType="{x:Type ListBox}">
-    <Setter Property="Background" Value="#2D2D30"/>
+        <Setter Property="Background" Value="#2D2D30"/>
+        <Setter Property="Foreground" Value="White"/>
+
     </Style>
-    
+
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#353535"/>
+    </Style>
+
     <Style TargetType="{x:Type Button}">
         <Setter Property="Background" Value="#3F3F46"/>
         <Setter Property="Foreground" Value="White"/>
