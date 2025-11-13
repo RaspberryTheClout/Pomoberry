@@ -34,6 +34,7 @@ namespace Pomoberry.Core
         /// </summary>
 
         private readonly System.Timers.Timer _timer; // System.Timers.Timer runs in a thread pool thread
+        private readonly AudioManager _audioManager; // Manages audio playback (not implemented here)
 
         // User-configurable settings
         public int WorkMinutes { get; private set; }
@@ -55,6 +56,8 @@ namespace Pomoberry.Core
         // Constructor
         public PomodoroSessionManager(int workMinutes = 25, int breakMinutes = 5, int totalSessions = 4)
         {
+            _audioManager = new AudioManager("lofi-loop.wav"); // Initialize audio manager 
+
             // Ensure valid values
             WorkMinutes = Math.Max(1, workMinutes);
             BreakMinutes = Math.Max(0, breakMinutes);
@@ -92,18 +95,24 @@ namespace Pomoberry.Core
         {
             if (CurrentSession > TotalSessions) return; // all sessions completed
             _timer.Start();
+            _audioManager.PlayMusic(); // Start background music
 
             // Immediately notify UI so it shows the current time
             TimeChanged?.Invoke(this, new TimeChangedEventArgs(TimeLeft));
         }
 
         // Pause timer
-        public void Pause() => _timer.Stop();
+        public void Pause()
+        {  
+            _timer.Stop();
+            _audioManager.StopMusic(); // Pause background music
+        }
 
         // Reset timer to first session
         public void Reset()
         {
             _timer.Stop(); // stop timer if running
+            _audioManager.StopMusic(); // Stop background music
             CurrentSession = 1;
             CurrentSessionType = SessionType.Work;
             TimeLeft = TimeSpan.FromMinutes(WorkMinutes);
@@ -154,6 +163,7 @@ namespace Pomoberry.Core
             {
                 // Switch to break
                 CurrentSessionType = SessionType.Break;
+                _audioManager.StopMusic(); // Stop music during break
                 TimeLeft = TimeSpan.FromMinutes(BreakMinutes);
                 SessionStarted?.Invoke(this, new SessionEventArgs(CurrentSessionType, CurrentSession));
             }
@@ -169,6 +179,7 @@ namespace Pomoberry.Core
                 }
 
                 CurrentSessionType = SessionType.Work;
+                _audioManager.PlayMusic(); // Resume music for work session
                 TimeLeft = TimeSpan.FromMinutes(WorkMinutes);
                 SessionStarted?.Invoke(this, new SessionEventArgs(CurrentSessionType, CurrentSession));
             }
