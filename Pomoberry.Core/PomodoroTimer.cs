@@ -34,7 +34,7 @@ namespace Pomoberry.Core
         /// </summary>
 
         private readonly System.Timers.Timer _timer; // System.Timers.Timer runs in a thread pool thread
-        private readonly AudioManager _audioManager; // Manages audio playback (not implemented here)
+        private readonly AudioManager _audioManager; // Manages audio playback (implemented elsewhere)
 
         // User-configurable settings
         public int WorkMinutes { get; private set; }
